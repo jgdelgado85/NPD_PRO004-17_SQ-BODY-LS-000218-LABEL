@@ -380,15 +380,6 @@ Public Class Form1
     End Function
 
 
-    Private Sub wait(ByVal seconds As Integer)
-        For i As Integer = 0 To seconds
-            System.Threading.Thread.Sleep(1)
-            Application.DoEvents()
-        Next
-    End Sub
-
-
-
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
 
     End Sub
@@ -539,12 +530,33 @@ Public Class Form1
         Dim gpibCommand As String = ""
         'Open GPIB connection
         btnOPEN.PerformClick()
-        wait(gpibWAIT)                  'Value in ms between commands sent
+        '****************************************************************************************Sleep BackgroundWorker START
+        '****************************************************************************************Sleep BackgroundWorker START
+        bkgworkSleep1.RunWorkerAsync(gpibWAIT) ' Set the Function to Run
+        Do While bkgworkSleep1.IsBusy       'Wait for the Background Worker to finish
+            Application.DoEvents()              'But keep all of the functions working
+        Loop
+        '****************************************************************************************Sleep BackgroundWorker END
+        '****************************************************************************************Sleep BackgroundWorker END
         txtbWriteGPIB.Text = "Q1X" 'Read Revision
         btnWRITE.PerformClick()
-        wait(gpibWAIT)
+        '****************************************************************************************Sleep BackgroundWorker START
+        '****************************************************************************************Sleep BackgroundWorker START
+        bkgworkSleep1.RunWorkerAsync(gpibWAIT) ' Set the Function to Run
+        Do While bkgworkSleep1.IsBusy       'Wait for the Background Worker to finish
+            Application.DoEvents()              'But keep all of the functions working
+        Loop
+        '****************************************************************************************Sleep BackgroundWorker END
+        '****************************************************************************************Sleep BackgroundWorker END
         btnREAD.PerformClick()
-        wait(gpibWait)
+        '****************************************************************************************Sleep BackgroundWorker START
+        '****************************************************************************************Sleep BackgroundWorker START
+        bkgworkSleep1.RunWorkerAsync(gpibWAIT) ' Set the Function to Run
+        Do While bkgworkSleep1.IsBusy       'Wait for the Background Worker to finish
+            Application.DoEvents()              'But keep all of the functions working
+        Loop
+        '****************************************************************************************Sleep BackgroundWorker END
+        '****************************************************************************************Sleep BackgroundWorker END
         If txtbReadGPIB.Text IsNot "" Then
             txtbTEGAMstatus.Text = txtbReadGPIB.Text
             txtbTEGAMstatus.BackColor = Color.LightGreen
@@ -553,21 +565,63 @@ Public Class Form1
             txtbTEGAMstatus.BackColor = Color.Red
         End If
 
-        wait(gpibWait)
+        '****************************************************************************************Sleep BackgroundWorker START
+        '****************************************************************************************Sleep BackgroundWorker START
+        bkgworkSleep1.RunWorkerAsync(gpibWAIT) ' Set the Function to Run
+        Do While bkgworkSleep1.IsBusy       'Wait for the Background Worker to finish
+            Application.DoEvents()              'But keep all of the functions working
+        Loop
+        '****************************************************************************************Sleep BackgroundWorker END
+        '****************************************************************************************Sleep BackgroundWorker END
         txtbWriteGPIB.Text = "R3X" 'Set Range R3X 20mΩ @ 100mA
         btnWRITE.PerformClick()
-        wait(gpibWait)
+        '****************************************************************************************Sleep BackgroundWorker START
+        '****************************************************************************************Sleep BackgroundWorker START
+        bkgworkSleep1.RunWorkerAsync(gpibWAIT) ' Set the Function to Run
+        Do While bkgworkSleep1.IsBusy       'Wait for the Background Worker to finish
+            Application.DoEvents()              'But keep all of the functions working
+        Loop
+        '****************************************************************************************Sleep BackgroundWorker END
+        '****************************************************************************************Sleep BackgroundWorker END
         btnREAD.PerformClick()
-        wait(gpibWait)
+        '****************************************************************************************Sleep BackgroundWorker START
+        '****************************************************************************************Sleep BackgroundWorker START
+        bkgworkSleep1.RunWorkerAsync(gpibWAIT) ' Set the Function to Run
+        Do While bkgworkSleep1.IsBusy       'Wait for the Background Worker to finish
+            Application.DoEvents()              'But keep all of the functions working
+        Loop
+        '****************************************************************************************Sleep BackgroundWorker END
+        '****************************************************************************************Sleep BackgroundWorker END
         ToolStripStatusLabel1.Text = txtbReadGPIB.Text
 
         '******************************************************************Initialize Symbol Barcode Scanner
         btnOpenBarcodeDeviceST1A.PerformClick()
-        wait(ccorescannerWAIT)
+        '****************************************************************************************Sleep BackgroundWorker START
+        '****************************************************************************************Sleep BackgroundWorker START
+        bkgworkSleep1.RunWorkerAsync(ccorescannerWAIT) ' Set the Function to Run
+        Do While bkgworkSleep1.IsBusy       'Wait for the Background Worker to finish
+            Application.DoEvents()              'But keep all of the functions working
+        Loop
+        '****************************************************************************************Sleep BackgroundWorker END
+        '****************************************************************************************Sleep BackgroundWorker END
         btnBCDeviceEventSubscribeST1A.PerformClick()
-        wait(ccorescannerWAIT)
+        '****************************************************************************************Sleep BackgroundWorker START
+        '****************************************************************************************Sleep BackgroundWorker START
+        bkgworkSleep1.RunWorkerAsync(ccorescannerWAIT) ' Set the Function to Run
+        Do While bkgworkSleep1.IsBusy       'Wait for the Background Worker to finish
+            Application.DoEvents()              'But keep all of the functions working
+        Loop
+        '****************************************************************************************Sleep BackgroundWorker END
+        '****************************************************************************************Sleep BackgroundWorker END
         btnBCDevice_BeepST1A.PerformClick()
-        wait(ccorescannerWAIT)
+        '****************************************************************************************Sleep BackgroundWorker START
+        '****************************************************************************************Sleep BackgroundWorker START
+        bkgworkSleep1.RunWorkerAsync(ccorescannerWAIT) ' Set the Function to Run
+        Do While bkgworkSleep1.IsBusy       'Wait for the Background Worker to finish
+            Application.DoEvents()              'But keep all of the functions working
+        Loop
+        '****************************************************************************************Sleep BackgroundWorker END
+        '****************************************************************************************Sleep BackgroundWorker END
         btnBCDevice_LEDGreenONST1A.PerformClick()
 
         txtbBARCODEstatus.Text = "Online"
@@ -704,11 +758,32 @@ Public Class Form1
 
         txtbWriteGPIB.Text = "GX" 'Get Value
         btnWRITE.PerformClick()
-        wait(50)
+        '****************************************************************************************Sleep BackgroundWorker START
+        '****************************************************************************************Sleep BackgroundWorker START
+        bkgworkSleep1.RunWorkerAsync(gpibWAIT) ' Set the Function to Run
+        Do While bkgworkSleep1.IsBusy       'Wait for the Background Worker to finish
+            Application.DoEvents()              'But keep all of the functions working
+        Loop
+        '****************************************************************************************Sleep BackgroundWorker END
+        '****************************************************************************************Sleep BackgroundWorker END
         btnTRIGGER.PerformClick()
-        wait(10)
+        '****************************************************************************************Sleep BackgroundWorker START
+        '****************************************************************************************Sleep BackgroundWorker START
+        bkgworkSleep1.RunWorkerAsync(gpibWAIT) ' Set the Function to Run
+        Do While bkgworkSleep1.IsBusy       'Wait for the Background Worker to finish
+            Application.DoEvents()              'But keep all of the functions working
+        Loop
+        '****************************************************************************************Sleep BackgroundWorker END
+        '****************************************************************************************Sleep BackgroundWorker END
         btnREAD.PerformClick()
-        wait(500)
+        '****************************************************************************************Sleep BackgroundWorker START
+        '****************************************************************************************Sleep BackgroundWorker START
+        bkgworkSleep1.RunWorkerAsync(gpibWAIT) ' Set the Function to Run
+        Do While bkgworkSleep1.IsBusy       'Wait for the Background Worker to finish
+            Application.DoEvents()              'But keep all of the functions working
+        Loop
+        '****************************************************************************************Sleep BackgroundWorker END
+        '****************************************************************************************Sleep BackgroundWorker END
         TEGAMresistValue = txtbReadGPIB.Text
         TEGAMresistValue = TEGAMresistValue.Replace(" mOhm", "")
         TEGAMresistValue = TEGAMresistValue.Replace(" ", "")
@@ -830,4 +905,25 @@ Public Class Form1
         End If
     End Sub
 
+    Private Sub bkgworkSleep1_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles bkgworkSleep1.DoWork
+        Dim I As Integer
+        bkgworkSleep1.WorkerReportsProgress = True
+        bkgworkSleep1.WorkerSupportsCancellation = True
+        For I = 0 To e.Argument
+            If bkgworkSleep1.CancellationPending = True Then            ' Has the background worker be told to stop?  
+                e.Cancel = True                ' Set Cancel to True 
+                Exit For
+            End If
+            System.Threading.Thread.Sleep(100) ' Sleep for 100 miliSecond  
+            bkgworkSleep1.ReportProgress(I)             ' Report The progress of the Background Worker. 
+        Next
+    End Sub
+
+    Private Sub StartToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StartToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub bkgworkSleep1_ProgressChanged(sender As Object, e As ProgressChangedEventArgs) Handles bkgworkSleep1.ProgressChanged
+        prgsbarSleep1.Value = e.ProgressPercentage
+    End Sub
 End Class

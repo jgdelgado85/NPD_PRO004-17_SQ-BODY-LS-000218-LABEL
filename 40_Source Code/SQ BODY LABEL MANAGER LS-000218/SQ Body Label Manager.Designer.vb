@@ -100,6 +100,8 @@ Partial Class Form1
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.txtbEXITapp = New System.Windows.Forms.Button()
         Me.txtbLOG = New System.Windows.Forms.TextBox()
+        Me.bkgworkSleep1 = New System.ComponentModel.BackgroundWorker()
+        Me.prgsbarSleep1 = New System.Windows.Forms.ProgressBar()
         Me.grpbxGPIB_TEGAM.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -890,11 +892,22 @@ Partial Class Form1
         Me.txtbLOG.Size = New System.Drawing.Size(391, 345)
         Me.txtbLOG.TabIndex = 0
         '
+        'bkgworkSleep1
+        '
+        '
+        'prgsbarSleep1
+        '
+        Me.prgsbarSleep1.Location = New System.Drawing.Point(636, 613)
+        Me.prgsbarSleep1.Name = "prgsbarSleep1"
+        Me.prgsbarSleep1.Size = New System.Drawing.Size(170, 18)
+        Me.prgsbarSleep1.TabIndex = 86
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(829, 632)
+        Me.Controls.Add(Me.prgsbarSleep1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.grpbxBarcodeScannerST1A)
         Me.Controls.Add(Me.GroupBox1)
@@ -1003,4 +1016,6 @@ Partial Class Form1
     Friend WithEvents Label18 As Label
     Friend WithEvents Label19 As Label
     Friend WithEvents txtbUPPERresistanceLIMIT As TextBox
+    Friend WithEvents bkgworkSleep1 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents prgsbarSleep1 As ProgressBar
 End Class
