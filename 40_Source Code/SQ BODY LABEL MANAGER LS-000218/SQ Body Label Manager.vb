@@ -709,21 +709,21 @@ Public Class Form1
             Case 4
                 MonthLetter = "D"
             Case 5
-                MonthLetter = "F"
+                MonthLetter = "E"
             Case 6
-                MonthLetter = "G"
+                MonthLetter = "F"
             Case 7
-                MonthLetter = "H"
+                MonthLetter = "G"
             Case 8
-                MonthLetter = "I"
+                MonthLetter = "H"
             Case 9
-                MonthLetter = "J"
+                MonthLetter = "I"
             Case 10
-                MonthLetter = "K"
+                MonthLetter = "J"
             Case 11
-                MonthLetter = "L"
+                MonthLetter = "K"
             Case 12
-                MonthLetter = "M"
+                MonthLetter = "L"
             Case Else
                 MonthLetter = "Error"
         End Select
