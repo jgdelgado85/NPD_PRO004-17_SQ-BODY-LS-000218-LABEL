@@ -688,15 +688,12 @@ Public Class Form1
 
 
 
-        txtbDATECODE.Text = "L" + DateAndTime.Now.Year.ToString.Last + MonthLetter() + DateAndTime.Now.Day.ToString + "F"
+        txtbDATECODE.Text = "L" + DateAndTime.Now.Year.ToString.Last + MonthLetter() + DayDigits() + "F"
         txtbPRN_TEMPLATE.Text = readIniFile(txtbPART_NUMBER_SELECT.Text, "LABEL_STYLE", DBfilepath)
 
         If txtbPRN_TEMPLATE.Text IsNot "" Then
             SelectPRNTemplate()
         End If
-
-
-
     End Sub
     Private Function MonthLetter() As String
         Select Case Date.Now.Month
@@ -726,6 +723,14 @@ Public Class Form1
                 MonthLetter = "L"
             Case Else
                 MonthLetter = "Error"
+        End Select
+    End Function
+    Private Function DayDigits() As String
+        Select Case DateAndTime.Now.Day
+            Case 1 To 9
+                DayDigits = "0" + DateAndTime.Now.Day.ToString
+            Case Else
+                DayDigits = DateAndTime.Now.Day.ToString
         End Select
     End Function
     Private Sub AboutToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem1.Click

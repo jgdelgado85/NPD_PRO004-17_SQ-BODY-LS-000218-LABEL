@@ -42,15 +42,14 @@ Partial Class AboutBox1
         '
         Me.TextBox1.BackColor = System.Drawing.Color.White
         Me.TextBox1.HideSelection = False
-        Me.TextBox1.Location = New System.Drawing.Point(23, 91)
+        Me.TextBox1.Location = New System.Drawing.Point(23, 89)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(342, 152)
+        Me.TextBox1.Size = New System.Drawing.Size(342, 162)
         Me.TextBox1.TabIndex = 1
         Me.TextBox1.TabStop = False
-        Me.TextBox1.Text = "LITTELFUSE NPD" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "SQ BODY LABEL MANAGER " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "APR. 2017 Ver.0.1." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "APR. 2017 Ver.0.2." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "MAY  2017 Ver.0.3." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Templates developed:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "-LS-000218" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Dev. and Support :jde" &
-    "lgado2@littelfuse.com" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.TextBox1.Text = resources.GetString("TextBox1.Text")
         Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'AboutBox1

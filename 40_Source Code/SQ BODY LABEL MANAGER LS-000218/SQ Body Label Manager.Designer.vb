@@ -920,7 +920,7 @@ Partial Class Form1
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "NPD: SQ BODY LABEL MANAGER Rev.0.3."
+        Me.Text = "NPD: SQ BODY LABEL MANAGER Rev.0.4."
         Me.grpbxGPIB_TEGAM.ResumeLayout(False)
         Me.grpbxGPIB_TEGAM.PerformLayout()
         Me.StatusStrip1.ResumeLayout(False)
